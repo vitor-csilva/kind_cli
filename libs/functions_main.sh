@@ -14,6 +14,8 @@ function _deploy_ingress () {
 }
 
 function _deploy_metallb () {
+    kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.13.11/config/manifests/metallb-native.yaml
+    sleep 30
     kubectl apply -f config/metallb/metallb.yaml
 }
 
